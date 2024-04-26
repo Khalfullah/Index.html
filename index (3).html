@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Login</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+h2 {
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #1877f2;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0e63ae;
+}
+
+a {
+  text-decoration: none;
+  color: #1877f2;
+  float: right;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <form id="loginForm" onsubmit="validateForm(); return false;">
+    <h2>Log into Your Account</h2>
+    <input type="text" id="username" name="username" placeholder="Username or Email"><br>
+    <input type="password" id="password" name="password" placeholder="Password"><br>
+    <button type="submit">Log In</button><br>
+    <a href="#">Forgot password?</a>
+  </form>
+</div>
+
+<script>
+function validateForm() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Validasi username atau email
+  if (username === "") {
+    alert("Please enter your username or email.");
+    return false;
+  }
+
+  // Validasi password
+  if (password === "") {
+    alert("Please enter your password.");
+    return false;
+  }
+
+  // Logika autentikasi sederhana
+  var correctUsername = "username"; // Ganti dengan username yang benar
+  var correctPassword = "password123"; // Ganti dengan password yang benar
+
+  if (username === correctUsername && password === correctPassword) {
+    alert("Logged in successfully!");
+  } else {
+    alert("Incorrect username or password. Please try again.");
+  }
+}
+</script>
+
+</body>
+</html>
